@@ -36,10 +36,7 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 8
 nav{margin-left:auto;display:flex;gap:22px;align-items:center}
 nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px}
 nav a:hover{color:var(--text)}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.lang button{all:unset;cursor:pointer;padding:5px 12px;font-size:13px;font-weight:700;color:var(--muted)}
-.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
-.lang button:focus-visible,a:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 
 .hero{padding:84px 0 64px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:620px;height:620px;border-radius:50%;
@@ -112,13 +109,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
       CodingTech Studio
     </a>
     <nav>
-      <a class="link" href="#games" data-en="Games &amp; apps" data-tr="Oyunlar ve uygulamalar">Games &amp; apps</a>
-      <a class="link" href="#studio" data-en="Studio" data-tr="Stüdyo">Studio</a>
-      <a class="link" href="#contact" data-en="Contact" data-tr="İletişim">Contact</a>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
-      </div>
+      <a class="link" href="#games">Games &amp; apps</a>
+      <a class="link" href="#studio">Studio</a>
+      <a class="link" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -126,25 +119,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <span class="eyebrow" data-en="Independent studio · İstanbul" data-tr="Bağımsız stüdyo · İstanbul">Independent studio · İstanbul</span>
-      <h1 data-en="Mobile games made with &lt;em&gt;care&lt;/em&gt;." data-tr="&lt;em&gt;Özenle&lt;/em&gt; yapılmış mobil oyunlar.">Mobile games made with <em>care</em>.</h1>
-      <p class="lead" data-en="CodingTech Studio designs, builds and publishes mobile games and apps. We make merge, puzzle and card games that are easy to pick up, fair to play and worth coming back to." data-tr="CodingTech Studio mobil oyunlar ve uygulamalar tasarlar, geliştirir ve yayınlar. Öğrenmesi kolay, adil ve yeniden açmaya değer birleştirme, bulmaca ve kart oyunları yapıyoruz.">CodingTech Studio designs, builds and publishes mobile games and apps. We make merge, puzzle and card games that are easy to pick up, fair to play and worth coming back to.</p>
+      <span class="eyebrow">Independent studio · İstanbul</span>
+      <h1>Mobile games made with <em>care</em>.</h1>
+      <p class="lead">CodingTech Studio designs, builds and publishes mobile games and apps. We make merge, puzzle and card games that are easy to pick up, fair to play and worth coming back to.</p>
       <div class="cta">
-        <a class="btn primary" href="#games" data-en="See our games" data-tr="Oyunlarımıza göz at">See our games</a>
-        <a class="btn" href="https://play.google.com/store/apps/developer?id=CodingTech+Studio" rel="noopener" data-en="Our Google Play page" data-tr="Google Play sayfamız">Our Google Play page</a>
+        <a class="btn primary" href="#games">See our games</a>
+        <a class="btn" href="https://play.google.com/store/apps/developer?id=CodingTech+Studio" rel="noopener">Our Google Play page</a>
       </div>
       <div class="stats">
-        <div class="stat"><b>5</b><span data-en="titles on Google Play" data-tr="Google Play'de yapım">titles on Google Play</span></div>
-        <div class="stat"><b>10</b><span data-en="store languages" data-tr="mağaza dili">store languages</span></div>
-        <div class="stat"><b>İstanbul</b><span data-en="where we work" data-tr="çalıştığımız şehir">where we work</span></div>
+        <div class="stat"><b>5</b><span>titles on Google Play</span></div>
+        <div class="stat"><b>10</b><span>store languages</span></div>
+        <div class="stat"><b>İstanbul</b><span>where we work</span></div>
       </div>
     </div>
   </div>
 
   <section id="games" class="alt">
     <div class="wrap">
-      <h2 data-en="Games &amp; apps" data-tr="Oyunlar ve uygulamalar">Games &amp; apps</h2>
-      <p class="sub" data-en="Everything below is available on Google Play today." data-tr="Aşağıdaki yapımların hepsi bugün Google Play'de.">Everything below is available on Google Play today.</p>
+      <h2>Games &amp; apps</h2>
+      <p class="sub">Everything below is available on Google Play today.</p>
 
       <div class="grid">
         <article class="card">
@@ -152,12 +145,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
           <div class="body">
             <div class="head">
               <img class="icon" src="assets/frostary-icon.png" alt="" width="56" height="56">
-              <div><span class="tag" data-en="Puzzle" data-tr="Bulmaca">Puzzle</span>
-              <h3 data-en="Frostary - Puzzle Game" data-tr="Frostary - Bulmaca Oyunu">Frostary - Puzzle Game</h3></div>
+              <div><span class="tag">Puzzle</span>
+              <h3>Frostary - Puzzle Game</h3></div>
             </div>
-            <p data-en="A 3D color sort puzzle: melt ice cubes by color and free the figure frozen inside." data-tr="3D renk sıralama bulmacası: buz küplerini rengine göre erit, içinde donmuş figürü kurtar.">A 3D color sort puzzle: melt ice cubes by color and free the figure frozen inside.</p>
+            <p>A 3D color sort puzzle: melt ice cubes by color and free the figure frozen inside.</p>
             <div class="links">
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.frostary" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.frostary" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span>Open on Google Play</span></a>
             </div>
           </div>
         </article>
@@ -167,12 +160,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
           <div class="body">
             <div class="head">
               <img class="icon" src="assets/heirloom-icon.png" alt="" width="56" height="56">
-              <div><span class="tag" data-en="Merge · Story" data-tr="Birleştirme · Hikâye">Merge · Story</span>
-              <h3 data-en="Heirloom: Merge &amp; Restore" data-tr="Heirloom: Birleştirme Oyunu">Heirloom: Merge &amp; Restore</h3></div>
+              <div><span class="tag">Merge · Story</span>
+              <h3>Heirloom: Merge &amp; Restore</h3></div>
             </div>
-            <p data-en="A merge game with a story: restore an Ottoman mansion room by room and uncover a family's secrets." data-tr="Hikâyeli birleştirme oyunu: bir Osmanlı konağını oda oda onar, ailenin sırrını çöz.">A merge game with a story: restore an Ottoman mansion room by room and uncover a family's secrets.</p>
+            <p>A merge game with a story: restore an Ottoman mansion room by room and uncover a family's secrets.</p>
             <div class="links">
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.heirloom" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.heirloom" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span>Open on Google Play</span></a>
             </div>
           </div>
         </article>
@@ -182,12 +175,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
           <div class="body">
             <div class="head">
               <img class="icon" src="assets/merry-pier-icon.png" alt="" width="56" height="56">
-              <div><span class="tag" data-en="Merge · Casual" data-tr="Birleştirme · Gündelik">Merge · Casual</span>
-              <h3 data-en="Merry Pier: Funfair Merge Game" data-tr="Merry Pier: Birleştirme Oyunu">Merry Pier: Funfair Merge Game</h3></div>
+              <div><span class="tag">Merge · Casual</span>
+              <h3>Merry Pier: Funfair Merge Game</h3></div>
             </div>
-            <p data-en="A relaxing merge game: merge sweets and tools, serve visitors and bring a sunny seaside funfair back to life." data-tr="Dinlendirici bir birleştirme oyunu: tatlıları ve aletleri birleştir, ziyaretçileri ağırla, sahildeki lunaparkı yeniden canlandır.">A relaxing merge game: merge sweets and tools, serve visitors and bring a sunny seaside funfair back to life.</p>
+            <p>A relaxing merge game: merge sweets and tools, serve visitors and bring a sunny seaside funfair back to life.</p>
             <div class="links">
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.merrypier" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.merrypier" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span>Open on Google Play</span></a>
             </div>
           </div>
         </article>
@@ -197,12 +190,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
           <div class="body">
             <div class="head">
               <img class="icon" src="assets/fusebound-icon.png" alt="" width="56" height="56">
-              <div><span class="tag" data-en="Card · Roguelike" data-tr="Kart · Roguelike">Card · Roguelike</span>
-              <h3 data-en="Fusebound: Roguelike Card Game" data-tr="Fusebound: Kart Savaşı Oyunu">Fusebound: Roguelike Card Game</h3></div>
+              <div><span class="tag">Card · Roguelike</span>
+              <h3>Fusebound: Roguelike Card Game</h3></div>
             </div>
-            <p data-en="A one-hand roguelike deckbuilder where you fuse cards in the middle of the fight. No timers, no gacha." data-tr="Kartlarını savaşın ortasında birleştirdiğin, tek elle oynanan roguelike deste oyunu. Zamanlayıcı yok, gacha yok.">A one-hand roguelike deckbuilder where you fuse cards in the middle of the fight. No timers, no gacha.</p>
+            <p>A one-hand roguelike deckbuilder where you fuse cards in the middle of the fight. No timers, no gacha.</p>
             <div class="links">
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.fusebound" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.fusebound" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span>Open on Google Play</span></a>
             </div>
           </div>
         </article>
@@ -212,12 +205,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
           <div class="body">
             <div class="head">
               <div class="icon mono" aria-hidden="true">M</div>
-              <div><span class="tag" data-en="App · Health" data-tr="Uygulama · Sağlık">App · Health</span>
+              <div><span class="tag">App · Health</span>
               <h3>Momera: Hamilelik Takibi</h3></div>
             </div>
-            <p data-en="A pregnancy tracking app in Turkish for expectant mothers." data-tr="Anne adayları için Türkçe hamilelik takip uygulaması.">A pregnancy tracking app in Turkish for expectant mothers.</p>
+            <p>A pregnancy tracking app in Turkish for expectant mothers.</p>
             <div class="links">
-              <a class="store" href="https://play.google.com/store/apps/details?id=com.momera.apps" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.momera.apps" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span>Open on Google Play</span></a>
             </div>
           </div>
         </article>
@@ -227,37 +220,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
   <section id="studio">
     <div class="wrap">
-      <h2 data-en="How we work" data-tr="Nasıl çalışıyoruz">How we work</h2>
-      <p class="sub" data-en="A small team with a simple promise: games that respect the player's time, money and privacy." data-tr="Basit bir sözü olan küçük bir ekibiz: oyuncunun zamanına, parasına ve gizliliğine saygı duyan oyunlar.">A small team with a simple promise: games that respect the player's time, money and privacy.</p>
+      <h2>How we work</h2>
+      <p class="sub">A small team with a simple promise: games that respect the player's time, money and privacy.</p>
       <div class="values">
         <div class="value"><span class="num">01</span>
-          <h3 data-en="Fun first" data-tr="Önce eğlence">Fun first</h3>
-          <p data-en="Every game starts as a small prototype. If the core idea is not fun in the first minute, we do not build the rest." data-tr="Her oyun küçük bir prototiple başlar. Ana fikir ilk dakikada eğlenceli değilse gerisini yapmayız.">Every game starts as a small prototype. If the core idea is not fun in the first minute, we do not build the rest.</p></div>
+          <h3>Fun first</h3>
+          <p>Every game starts as a small prototype. If the core idea is not fun in the first minute, we do not build the rest.</p></div>
         <div class="value"><span class="num">02</span>
-          <h3 data-en="Fair play" data-tr="Adil oyun">Fair play</h3>
-          <p data-en="Free to play means free to finish. No fake timers, no hidden costs, no ads dressed up as content." data-tr="Ücretsiz oyun, ücretsiz bitirilebilen oyundur. Sahte sayaç, gizli maliyet ya da içerik gibi görünen reklam yok.">Free to play means free to finish. No fake timers, no hidden costs, no ads dressed up as content.</p></div>
+          <h3>Fair play</h3>
+          <p>Free to play means free to finish. No fake timers, no hidden costs, no ads dressed up as content.</p></div>
         <div class="value"><span class="num">03</span>
-          <h3 data-en="Privacy by default" data-tr="Varsayılan olarak gizlilik">Privacy by default</h3>
-          <p data-en="We ask before we measure, collect as little as we can and publish a clear privacy policy for every title." data-tr="Ölçmeden önce sorarız, olabildiğince az veri toplarız ve her yapım için açık bir gizlilik politikası yayınlarız.">We ask before we measure, collect as little as we can and publish a clear privacy policy for every title.</p></div>
+          <h3>Privacy by default</h3>
+          <p>We ask before we measure, collect as little as we can and publish a clear privacy policy for every title.</p></div>
         <div class="value"><span class="num">04</span>
-          <h3 data-en="Made for everyone" data-tr="Herkes için">Made for everyone</h3>
-          <p data-en="Our store pages are written in ten languages, and our games are built to be played with one hand, in short breaks." data-tr="Mağaza sayfalarımız on dilde yazılır; oyunlarımız tek elle, kısa molalarda oynanacak şekilde tasarlanır.">Our store pages are written in ten languages, and our games are built to be played with one hand, in short breaks.</p></div>
+          <h3>Made for everyone</h3>
+          <p>Our store pages are written in ten languages, and our games are built to be played with one hand, in short breaks.</p></div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="alt">
     <div class="wrap">
-      <h2 data-en="Contact" data-tr="İletişim">Contact</h2>
-      <p class="sub" data-en="Questions, feedback, press or business: write to us. We read every message." data-tr="Soru, geri bildirim, basın ya da iş birliği için bize yazın. Her mesajı okuyoruz.">Questions, feedback, press or business: write to us. We read every message.</p>
+      <h2>Contact</h2>
+      <p class="sub">Questions, feedback, press or business: write to us. We read every message.</p>
       <div class="contact">
         <dl>
-          <div><dt data-en="E-mail" data-tr="E-posta">E-mail</dt><dd><a href="mailto:codingtechstudio@gmail.com">codingtechstudio@gmail.com</a></dd></div>
-          <div><dt data-en="Location" data-tr="Konum">Location</dt><dd>Başakşehir / İstanbul, Türkiye</dd></div>
-          <div><dt data-en="Developer page" data-tr="Geliştirici sayfası">Developer page</dt><dd><a href="https://play.google.com/store/apps/developer?id=CodingTech+Studio" rel="noopener">Google Play · CodingTech Studio</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:codingtechstudio@gmail.com">codingtechstudio@gmail.com</a></dd></div>
+          <div><dt>Location</dt><dd>Başakşehir / İstanbul, Türkiye</dd></div>
+          <div><dt>Developer page</dt><dd><a href="https://play.google.com/store/apps/developer?id=CodingTech+Studio" rel="noopener">Google Play · CodingTech Studio</a></dd></div>
         </dl>
         <div>
-          <dt style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px" data-en="Privacy policies" data-tr="Gizlilik politikaları">Privacy policies</dt>
+          <dt style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Privacy policies</dt>
           <ul class="policies">
             <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Frostary%20Gizlilik%20Politikas%C4%B1">Frostary</a></li>
             <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Heirloom%20Gizlilik%20Politikas%C4%B1">Heirloom</a></li>
@@ -274,37 +267,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 <footer>
   <div class="wrap">
     <span>© 2026 CodingTech Studio</span>
-    <span data-en="This site uses no cookies and no tracking." data-tr="Bu site çerez ya da izleme kullanmaz.">This site uses no cookies and no tracking.</span>
+    <span>This site uses no cookies and no tracking.</span>
   </div>
 </footer>
 
-<script>
-(function () {
-  var titles = {
-    en: "CodingTech Studio — Mobile games and apps",
-    tr: "CodingTech Studio — Mobil oyunlar ve uygulamalar"
-  };
-  function apply(lang) {
-    document.documentElement.lang = lang;
-    document.title = titles[lang];
-    document.querySelectorAll("[data-" + lang + "]").forEach(function (el) {
-      el.innerHTML = el.getAttribute("data-" + lang);
-    });
-    document.querySelectorAll(".lang button").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
-    });
-  }
-  var saved = null;
-  try { saved = localStorage.getItem("lang"); } catch (e) {}
-  var start = saved || ((navigator.language || "en").toLowerCase().indexOf("tr") === 0 ? "tr" : "en");
-  apply(start);
-  document.querySelectorAll(".lang button").forEach(function (b) {
-    b.addEventListener("click", function () {
-      apply(b.dataset.lang);
-      try { localStorage.setItem("lang", b.dataset.lang); } catch (e) {}
-    });
-  });
-})();
-</script>
 </body>
 </html>
