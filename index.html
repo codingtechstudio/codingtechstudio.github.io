@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodingTech Studio — Mobile games and apps</title>
+<meta name="description" content="CodingTech Studio is an independent studio from İstanbul making mobile games and apps: merge, puzzle and card games on Google Play.">
+<meta property="og:title" content="CodingTech Studio">
+<meta property="og:description" content="Independent studio from İstanbul. Mobile games and apps on Google Play.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff8a3d'/%3E%3Cpath d='M26 20 14 32l12 12M38 20l12 12-12 12' fill='none' stroke='%23141726' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1220; --bg2:#151a2c; --card:#1b2136; --line:#2a3250; --text:#eef1fa; --muted:#a3acc6;
+  --accent:#ff8a3d; --accent-ink:#1a1206; --accent2:#6fd3c0; --radius:18px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f7f5f0; --bg2:#ffffff; --card:#ffffff; --line:#e4dfd3; --text:#1a1d2b; --muted:#5d6377;
+    --accent:#d9601a; --accent-ink:#ffffff; --accent2:#127a69; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:18px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-size:18px}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--accent);display:grid;place-items:center}
+.mark svg{width:20px;height:20px}
+nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px}
+nav a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:5px 12px;font-size:13px;font-weight:700;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.lang button:focus-visible,a:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+
+.hero{padding:84px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 30%,transparent),transparent);pointer-events:none}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent2)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent2)}
+h1{font-size:clamp(36px,6.4vw,64px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 18px;max-width:14ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:60ch;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:700;
+  text-decoration:none;border:1px solid var(--line);background:var(--card)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn:hover{transform:translateY(-1px)}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:46px;position:relative}
+.stat b{display:block;font-size:28px;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:14px}
+
+section{padding:64px 0}
+section.alt{background:var(--bg2);border-block:1px solid var(--line)}
+h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 32px;max-width:62ch}
+
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column}
+.shot{aspect-ratio:1024/500;background:var(--bg2);object-fit:cover;width:100%;height:auto}
+.shot.plain{display:grid;place-items:center;background:linear-gradient(135deg,#f5b8c8,#f7d9a8)}
+.shot.plain span{font-size:44px;font-weight:800;color:#5a2440;letter-spacing:-.02em}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.head{display:flex;gap:14px;align-items:center}
+.icon{width:56px;height:56px;border-radius:14px;flex:none;border:1px solid var(--line)}
+.icon.mono{display:grid;place-items:center;background:#f5b8c8;color:#5a2440;font-weight:800;font-size:24px}
+.card h3{margin:0;font-size:19px;letter-spacing:-.01em;line-height:1.25}
+.tag{font-size:12.5px;font-weight:700;color:var(--accent2);letter-spacing:.04em;text-transform:uppercase}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.links{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.store{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;background:var(--text);
+  color:var(--bg);font-weight:700;font-size:14px;text-decoration:none}
+.store svg{width:14px;height:14px}
+.minor{font-size:13.5px;color:var(--muted)}
+
+.values{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.value{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.value h3{margin:0 0 6px;font-size:17px}
+.value p{margin:0;color:var(--muted);font-size:15px}
+.num{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.08em}
+
+.contact{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.contact dl{margin:0;display:grid;gap:14px}
+.contact dt{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact dd{margin:2px 0 0;font-size:17px;font-weight:600}
+.policies{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.policies a{color:var(--muted)}
+.policies a:hover{color:var(--text)}
+
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media (max-width:640px){ nav a.link{display:none} .hero{padding:56px 0 44px} section{padding:48px 0} }
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .btn:hover{transform:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="CodingTech Studio">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#141726" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span>
+      CodingTech Studio
+    </a>
+    <nav>
+      <a class="link" href="#games" data-en="Games &amp; apps" data-tr="Oyunlar ve uygulamalar">Games &amp; apps</a>
+      <a class="link" href="#studio" data-en="Studio" data-tr="Stüdyo">Studio</a>
+      <a class="link" href="#contact" data-en="Contact" data-tr="İletişim">Contact</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow" data-en="Independent studio · İstanbul" data-tr="Bağımsız stüdyo · İstanbul">Independent studio · İstanbul</span>
+      <h1 data-en="Mobile games made with &lt;em&gt;care&lt;/em&gt;." data-tr="&lt;em&gt;Özenle&lt;/em&gt; yapılmış mobil oyunlar.">Mobile games made with <em>care</em>.</h1>
+      <p class="lead" data-en="CodingTech Studio designs, builds and publishes mobile games and apps. We make merge, puzzle and card games that are easy to pick up, fair to play and worth coming back to." data-tr="CodingTech Studio mobil oyunlar ve uygulamalar tasarlar, geliştirir ve yayınlar. Öğrenmesi kolay, adil ve yeniden açmaya değer birleştirme, bulmaca ve kart oyunları yapıyoruz.">CodingTech Studio designs, builds and publishes mobile games and apps. We make merge, puzzle and card games that are easy to pick up, fair to play and worth coming back to.</p>
+      <div class="cta">
+        <a class="btn primary" href="#games" data-en="See our games" data-tr="Oyunlarımıza göz at">See our games</a>
+        <a class="btn" href="https://play.google.com/store/apps/developer?id=CodingTech+Studio" rel="noopener" data-en="Our Google Play page" data-tr="Google Play sayfamız">Our Google Play page</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5</b><span data-en="titles on Google Play" data-tr="Google Play'de yapım">titles on Google Play</span></div>
+        <div class="stat"><b>10</b><span data-en="store languages" data-tr="mağaza dili">store languages</span></div>
+        <div class="stat"><b>İstanbul</b><span data-en="where we work" data-tr="çalıştığımız şehir">where we work</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="games" class="alt">
+    <div class="wrap">
+      <h2 data-en="Games &amp; apps" data-tr="Oyunlar ve uygulamalar">Games &amp; apps</h2>
+      <p class="sub" data-en="Everything below is available on Google Play today." data-tr="Aşağıdaki yapımların hepsi bugün Google Play'de.">Everything below is available on Google Play today.</p>
+
+      <div class="grid">
+        <article class="card">
+          <img class="shot" src="assets/frostary-feature.jpg" alt="" loading="lazy" width="820" height="400">
+          <div class="body">
+            <div class="head">
+              <img class="icon" src="assets/frostary-icon.png" alt="" width="56" height="56">
+              <div><span class="tag" data-en="Puzzle" data-tr="Bulmaca">Puzzle</span>
+              <h3 data-en="Frostary - Puzzle Game" data-tr="Frostary - Bulmaca Oyunu">Frostary - Puzzle Game</h3></div>
+            </div>
+            <p data-en="A 3D color sort puzzle: melt ice cubes by color and free the figure frozen inside." data-tr="3D renk sıralama bulmacası: buz küplerini rengine göre erit, içinde donmuş figürü kurtar.">A 3D color sort puzzle: melt ice cubes by color and free the figure frozen inside.</p>
+            <div class="links">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.frostary" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="shot" src="assets/heirloom-feature.jpg" alt="" loading="lazy" width="820" height="400">
+          <div class="body">
+            <div class="head">
+              <img class="icon" src="assets/heirloom-icon.png" alt="" width="56" height="56">
+              <div><span class="tag" data-en="Merge · Story" data-tr="Birleştirme · Hikâye">Merge · Story</span>
+              <h3 data-en="Heirloom: Merge &amp; Restore" data-tr="Heirloom: Birleştirme Oyunu">Heirloom: Merge &amp; Restore</h3></div>
+            </div>
+            <p data-en="A merge game with a story: restore an Ottoman mansion room by room and uncover a family's secrets." data-tr="Hikâyeli birleştirme oyunu: bir Osmanlı konağını oda oda onar, ailenin sırrını çöz.">A merge game with a story: restore an Ottoman mansion room by room and uncover a family's secrets.</p>
+            <div class="links">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.heirloom" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="shot" src="assets/merry-pier-feature.jpg" alt="" loading="lazy" width="820" height="400">
+          <div class="body">
+            <div class="head">
+              <img class="icon" src="assets/merry-pier-icon.png" alt="" width="56" height="56">
+              <div><span class="tag" data-en="Merge · Casual" data-tr="Birleştirme · Gündelik">Merge · Casual</span>
+              <h3 data-en="Merry Pier: Funfair Merge Game" data-tr="Merry Pier: Birleştirme Oyunu">Merry Pier: Funfair Merge Game</h3></div>
+            </div>
+            <p data-en="A relaxing merge game: merge sweets and tools, serve visitors and bring a sunny seaside funfair back to life." data-tr="Dinlendirici bir birleştirme oyunu: tatlıları ve aletleri birleştir, ziyaretçileri ağırla, sahildeki lunaparkı yeniden canlandır.">A relaxing merge game: merge sweets and tools, serve visitors and bring a sunny seaside funfair back to life.</p>
+            <div class="links">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.merrypier" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="shot" src="assets/fusebound-feature.jpg" alt="" loading="lazy" width="820" height="400">
+          <div class="body">
+            <div class="head">
+              <img class="icon" src="assets/fusebound-icon.png" alt="" width="56" height="56">
+              <div><span class="tag" data-en="Card · Roguelike" data-tr="Kart · Roguelike">Card · Roguelike</span>
+              <h3 data-en="Fusebound: Roguelike Card Game" data-tr="Fusebound: Kart Savaşı Oyunu">Fusebound: Roguelike Card Game</h3></div>
+            </div>
+            <p data-en="A one-hand roguelike deckbuilder where you fuse cards in the middle of the fight. No timers, no gacha." data-tr="Kartlarını savaşın ortasında birleştirdiğin, tek elle oynanan roguelike deste oyunu. Zamanlayıcı yok, gacha yok.">A one-hand roguelike deckbuilder where you fuse cards in the middle of the fight. No timers, no gacha.</p>
+            <div class="links">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.codingtechstudio.fusebound" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="shot plain" aria-hidden="true"><span>Momera</span></div>
+          <div class="body">
+            <div class="head">
+              <div class="icon mono" aria-hidden="true">M</div>
+              <div><span class="tag" data-en="App · Health" data-tr="Uygulama · Sağlık">App · Health</span>
+              <h3>Momera: Hamilelik Takibi</h3></div>
+            </div>
+            <p data-en="A pregnancy tracking app in Turkish for expectant mothers." data-tr="Anne adayları için Türkçe hamilelik takip uygulaması.">A pregnancy tracking app in Turkish for expectant mothers.</p>
+            <div class="links">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.momera.apps" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg><span data-en="Open on Google Play" data-tr="Google Play'de aç">Open on Google Play</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio">
+    <div class="wrap">
+      <h2 data-en="How we work" data-tr="Nasıl çalışıyoruz">How we work</h2>
+      <p class="sub" data-en="A small team with a simple promise: games that respect the player's time, money and privacy." data-tr="Basit bir sözü olan küçük bir ekibiz: oyuncunun zamanına, parasına ve gizliliğine saygı duyan oyunlar.">A small team with a simple promise: games that respect the player's time, money and privacy.</p>
+      <div class="values">
+        <div class="value"><span class="num">01</span>
+          <h3 data-en="Fun first" data-tr="Önce eğlence">Fun first</h3>
+          <p data-en="Every game starts as a small prototype. If the core idea is not fun in the first minute, we do not build the rest." data-tr="Her oyun küçük bir prototiple başlar. Ana fikir ilk dakikada eğlenceli değilse gerisini yapmayız.">Every game starts as a small prototype. If the core idea is not fun in the first minute, we do not build the rest.</p></div>
+        <div class="value"><span class="num">02</span>
+          <h3 data-en="Fair play" data-tr="Adil oyun">Fair play</h3>
+          <p data-en="Free to play means free to finish. No fake timers, no hidden costs, no ads dressed up as content." data-tr="Ücretsiz oyun, ücretsiz bitirilebilen oyundur. Sahte sayaç, gizli maliyet ya da içerik gibi görünen reklam yok.">Free to play means free to finish. No fake timers, no hidden costs, no ads dressed up as content.</p></div>
+        <div class="value"><span class="num">03</span>
+          <h3 data-en="Privacy by default" data-tr="Varsayılan olarak gizlilik">Privacy by default</h3>
+          <p data-en="We ask before we measure, collect as little as we can and publish a clear privacy policy for every title." data-tr="Ölçmeden önce sorarız, olabildiğince az veri toplarız ve her yapım için açık bir gizlilik politikası yayınlarız.">We ask before we measure, collect as little as we can and publish a clear privacy policy for every title.</p></div>
+        <div class="value"><span class="num">04</span>
+          <h3 data-en="Made for everyone" data-tr="Herkes için">Made for everyone</h3>
+          <p data-en="Our store pages are written in ten languages, and our games are built to be played with one hand, in short breaks." data-tr="Mağaza sayfalarımız on dilde yazılır; oyunlarımız tek elle, kısa molalarda oynanacak şekilde tasarlanır.">Our store pages are written in ten languages, and our games are built to be played with one hand, in short breaks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <h2 data-en="Contact" data-tr="İletişim">Contact</h2>
+      <p class="sub" data-en="Questions, feedback, press or business: write to us. We read every message." data-tr="Soru, geri bildirim, basın ya da iş birliği için bize yazın. Her mesajı okuyoruz.">Questions, feedback, press or business: write to us. We read every message.</p>
+      <div class="contact">
+        <dl>
+          <div><dt data-en="E-mail" data-tr="E-posta">E-mail</dt><dd><a href="mailto:codingtechstudio@gmail.com">codingtechstudio@gmail.com</a></dd></div>
+          <div><dt data-en="Location" data-tr="Konum">Location</dt><dd>Başakşehir / İstanbul, Türkiye</dd></div>
+          <div><dt data-en="Developer page" data-tr="Geliştirici sayfası">Developer page</dt><dd><a href="https://play.google.com/store/apps/developer?id=CodingTech+Studio" rel="noopener">Google Play · CodingTech Studio</a></dd></div>
+        </dl>
+        <div>
+          <dt style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px" data-en="Privacy policies" data-tr="Gizlilik politikaları">Privacy policies</dt>
+          <ul class="policies">
+            <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Frostary%20Gizlilik%20Politikas%C4%B1">Frostary</a></li>
+            <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Heirloom%20Gizlilik%20Politikas%C4%B1">Heirloom</a></li>
+            <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Merry%20Pier%20Gizlilik%20Politikas%C4%B1">Merry Pier</a></li>
+            <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Fusebound%20Gizlilik%20Politikas%C4%B1">Fusebound</a></li>
+            <li><a rel="noopener" href="https://raw.githubusercontent.com/ofarukcelik/Gizlilik-Politikalar-/refs/heads/master/Momera%20Gizlilik%20Politikas%C4%B1">Momera</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 CodingTech Studio</span>
+    <span data-en="This site uses no cookies and no tracking." data-tr="Bu site çerez ya da izleme kullanmaz.">This site uses no cookies and no tracking.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var titles = {
+    en: "CodingTech Studio — Mobile games and apps",
+    tr: "CodingTech Studio — Mobil oyunlar ve uygulamalar"
+  };
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+    document.querySelectorAll("[data-" + lang + "]").forEach(function (el) {
+      el.innerHTML = el.getAttribute("data-" + lang);
+    });
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+    });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  var start = saved || ((navigator.language || "en").toLowerCase().indexOf("tr") === 0 ? "tr" : "en");
+  apply(start);
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      apply(b.dataset.lang);
+      try { localStorage.setItem("lang", b.dataset.lang); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>
